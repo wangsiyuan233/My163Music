@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,5 +8,30 @@
 </head>
 <body>
 
+<div id="yyy">
+  <button id="xxx">点我</button>
+</div>
+
+
+
+  <script src='./node_modules/leancloud-storage/dist/av-min.js'></script>
+  <script>
+  var APP_ID = 'pIyBgwRrsHKBWDlFouxby1xG-gzGzoHsz';
+  var APP_KEY = 'ynIQKt2W5mSvCneaCxBugOOl';
+  AV.init({appId: APP_ID,appKey: APP_KEY});
+
+  var TestObject = AV.Object.extend('Song');
+  var testObject = new TestObject();
+  testObject.save({
+    songs:['1','2'],
+  }).then(function(object) {
+    alert('Aye!')
+  })
+  </script>
+
+<script src='./node_modules/qiniu-js/qiniu.min.js'></script>
+<script src='./node_modules/plupload/js/plupload.min.js'></script>
+
+<script> console.log(Qiniu)</script>
 </body>
 </html>
