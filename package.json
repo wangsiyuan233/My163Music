@@ -1,7 +1,6 @@
 {
   "name": "my163music",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +8,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "leancloud-storage": "^3.6.0",
+    "leancloud-storage": "^3.6.8",
+    "moxie": "0.0.0",
     "plupload": "^2.3.2",
-    "qiniu": "^7.1.3",
-    "qiniu-js": "^1.0.22"
-  }
+    "qiniu": "^7.1.5",
+    "qiniu-js": "^1.0.24"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangsiyuan233/My163Music.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wangsiyuan233/My163Music/issues"
+  },
+  "homepage": "https://github.com/wangsiyuan233/My163Music#readme",
+  "description": ""
 }
