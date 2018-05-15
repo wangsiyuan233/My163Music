@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.3.1",
     "leancloud-storage": "^3.6.8",
     "moxie": "0.0.0",
     "plupload": "^2.3.2",
