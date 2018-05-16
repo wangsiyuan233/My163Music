@@ -10,6 +10,7 @@
       $el.html(this.template)
       let {songs, selectedSongId} = data
       let liList = songs.map((song)=> {
+        //attr() 返回被选元素的属性值。
         let $li = $('<li></li>').text(song.name).attr('data-song-id', song.id)
         if(song.id === selectedSongId){ $li.addClass('active') }
         return $li

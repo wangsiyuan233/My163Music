@@ -1,4 +1,3 @@
-
 {
   let view = {
     el: '#siteLoading',
@@ -9,6 +8,7 @@
       $(this.el).removeClass('active')
     },
   }
+  
   let controller = {
     init(view){
       this.view = view
