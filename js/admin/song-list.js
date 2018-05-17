@@ -1,29 +1,32 @@
 {
   let view = {
-    el: '#songList-container',
-    template: `
-      <ul class="songList">
-      </ul>
-    `,
+    el:'#songList-container',
+    template: `<ul class= 'songList'></ul>`,
+
     render(data){
       let $el = $(this.el)
       $el.html(this.template)
-      let {songs, selectedSongId} = data
-      let liList = songs.map((song)=> {
-        //attr() 返回被选元素的属性值。
-        let $li = $('<li></li>').text(song.name).attr('data-song-id', song.id)
-        if(song.id === selectedSongId){ $li.addClass('active') }
+      let {songs,selectedSongId} = data
+
+      let liList = songs.map((song)=>{
+        let $li = $('<li></li>').text(song.name).attr('data-song-id',song.id)
+        if(song.id === selectedSongId){
+          $li.addClass('active')
+        }
         return $li
       })
+
       $el.find('ul').empty()
-      liList.map((domLi)=>{
-        $el.find('ul').append(domLi)
-      })
-    },
+      liList.map((domLi)=>{$el.find('ul').append(domLi)})
+    }
+
     clearActive(){
       $(this.el).find('.active').removeClass('active')
     }
+
   }
+
+
   let model = {
     data: {
       songs: [ ],
@@ -39,20 +42,19 @@
       })
     }
   }
+
+
   let controller = {
     init(view, model){
       this.view = view
       this.model = model
       this.view.render(this.model.data)
+
       this.bindEvents()
       this.bindEventHub()
       this.getAllSongs()
     },
-    getAllSongs(){
-      return this.model.find().then(()=>{
-        this.view.render(this.model.data)
-      })
-    },
+
     bindEvents(){
       $(this.view.el).on('click', 'li', (e)=>{
         let songId = e.currentTarget.getAttribute('data-song-id')
@@ -69,28 +71,45 @@
           }
         }
         window.eventHub.emit('select', JSON.parse(JSON.stringify(data)))
+        // JSON.parse turns a string of JSON text into a Javascript object.
+        //JSON.stringify turns a Javascript object into JSON text and stores that JSON text in a string.
+        // 也就是说 data 先变成 JSON,再变成 JS
+        // 为啥啊？？？
+
       })
     },
+
     bindEventHub(){
-      window.eventHub.on('create', (songData)=>{
-        // songs = ['ADDR 108']
+
+      window.eventHub.on('create',(songData)=>{
         this.model.data.songs.push(songData)
         this.view.render(this.model.data)
       })
+
       window.eventHub.on('new',()=>{
         this.view.clearActive()
       })
-      window.eventHub.on('update', (song)=>{
+
+      window.eventHub.on('updata',(song)=>{
         let songs = this.model.data.songs
-        for(let i=0; i<songs.length; i++){
-          if(songs[i].id === song.id){
-            Object.assign(songs[i],song)
-          }
+        for (let i = 0; i < songs.length; i++) {
+          if(songs[i].id === songId){Object.assign(songs[i],song)}
+          //Object.assign() ES6中的深拷贝
         }
         this.view.render(this.model.data)
       })
     }
+
+    getAllSongs(){
+      return this.model.find().then(()=>{
+        this.view.render(this.model.data)
+      })
+    },
+
+
   }
+
+
 
   controller.init(view, model)
 }

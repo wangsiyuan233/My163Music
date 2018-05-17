@@ -7,9 +7,9 @@
     render(data){
       $(this.el).html(this.template)
     }
-  },
+  }
 
-  let model = {},
+    let model = {}
 
   let controller = {
     init(view, model){
@@ -25,6 +25,6 @@
 
     active(){$(this.view.el).addClass('active')},
     deactive(){$(this.view.el).removeClass('active')}
-  },
+  }
   controller.init(view, model)
 }

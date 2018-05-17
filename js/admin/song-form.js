@@ -1,9 +1,8 @@
 {
   let view = {
     el: '.page > main',
-    init(){
-      this.$el = $(this.el)
-    },
+    init(){this.$el = $(this.el)},
+
     template: `
       <form class="form">
         <div class="row">
@@ -48,20 +47,22 @@
         html = html.replace(`__${string}__`, data[string] || '')
       })
       $(this.el).html(html)
-      if(data.id){
-        $(this.el).prepend('<h1>编辑歌曲</h1>')
-      }else{
-        $(this.el).prepend('<h1>新建歌曲</h1>')
-      }
+      if(data.id){$(this.el).prepend('<h1>编辑歌曲</h1>')}
+      else{$(this.el).prepend('<h1>新建歌曲</h1>')}
     },
+
     reset(){
       this.render({})
+      //???????
     }
   }
+
+
   let model = {
     data: {
       name: '', singer: '', url: '', id: '', cover: '', lyrics: ''
     },
+
     update(data){
       var song = AV.Object.createWithoutData('Song', this.data.id)
       song.set('name', data.name)
@@ -74,6 +75,7 @@
         return response
       })
     },
+
     create(data){
       var Song = AV.Object.extend('Song');
       var song = new Song();
@@ -90,6 +92,7 @@
       });
     }
   }
+
   let controller = {
     init(view, model){
       this.view = view
@@ -97,10 +100,12 @@
       this.model = model
       this.view.render(this.model.data)
       this.bindEvents()
+
       window.eventHub.on('select', (data)=>{
         this.model.data = data
         this.view.render(this.model.data)
       })
+
       window.eventHub.on('new', (data)=>{
         if(this.model.data.id){
           this.model.data = {
@@ -112,6 +117,7 @@
         this.view.render(this.model.data)
       })
     },
+
     create(){
       let needs = 'name singer url cover lyrics'.split(' ')
       let data = {}
@@ -127,6 +133,7 @@
           window.eventHub.emit('create', object)
         })
     },
+
     update(){
       let needs = 'name singer url cover lyrics'.split(' ')
       let data = {}
@@ -138,6 +145,7 @@
           window.eventHub.emit('update', JSON.parse(JSON.stringify(this.model.data)))
         })
     },
+
     bindEvents(){
       this.view.$el.on('submit', 'form', (e)=>{
         e.preventDefault()
