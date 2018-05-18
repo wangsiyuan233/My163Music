@@ -1,3 +1,5 @@
+
+// 激活new事件 参数是 name 和 URL
 {
   let view = {
     el: '.uploadArea',

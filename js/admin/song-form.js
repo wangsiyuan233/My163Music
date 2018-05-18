@@ -1,3 +1,7 @@
+
+// 监听 new 事件 如果是新歌曲就展示没有id的数组
+// 监听select 选中歌曲就展示内容
+// 触发 update 事件，异步更新
 {
   let view = {
     el: '.page > main',
@@ -39,26 +43,32 @@
           <button type="submit">保存</button>
         </div>
       </form>
-    `,
+      `,
+
     render(data = {}){
       let placeholders = ['name', 'url', 'singer', 'id', 'cover', 'lyrics']
       let html = this.template
+
+      // 遍历占位符 将模块里的字符串赋值为空字符串
       placeholders.map((string)=>{
         html = html.replace(`__${string}__`, data[string] || '')
       })
+
+      // 取 <main> 的 html
       $(this.el).html(html)
+      //如果上传的歌曲在库里有id,就是编辑歌曲
       if(data.id){$(this.el).prepend('<h1>编辑歌曲</h1>')}
+      // 没有id，就是新建歌曲
       else{$(this.el).prepend('<h1>新建歌曲</h1>')}
     },
 
-    reset(){
-      this.render({})
-      //???????
-    }
+    // 重新渲染
+    reset(){this.render({})}
   }
 
 
   let model = {
+    // data:{}
     data: {
       name: '', singer: '', url: '', id: '', cover: '', lyrics: ''
     },
@@ -70,6 +80,8 @@
       song.set('lyrics', data.lyrics)
       song.set('url', data.url)
       song.set('cover', data.cover)
+
+      // 
       return song.save().then((response)=>{
         Object.assign(this.data, data)
         return response

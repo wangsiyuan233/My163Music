@@ -1,3 +1,5 @@
+
+// 新建歌曲按钮 点击触发new事件 激活自己
 {
   let view = {
     el: '.newSong',

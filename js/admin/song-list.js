@@ -1,3 +1,5 @@
+
+// 点击触发select事件 激活自己；监听update,更新li后render自己
 {
   let view = {
     el:'#songList-container',
@@ -17,8 +19,7 @@
       })
 
       $el.find('ul').empty()
-      liList.map((domLi)=>{$el.find('ul').append(domLi)})
-    }
+      liList.map((domLi)=>{$el.find('ul').append(domLi)})},
 
     clearActive(){
       $(this.el).find('.active').removeClass('active')
@@ -98,7 +99,7 @@
         }
         this.view.render(this.model.data)
       })
-    }
+    },
 
     getAllSongs(){
       return this.model.find().then(()=>{
