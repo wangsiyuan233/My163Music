@@ -36,7 +36,7 @@ body{
   padding: 10px;
 }
 .newSong.active{
-  background: #d4d4d4;
+  background: #fafafa;
 }
 #songList-container{
   flex-grow: 1;
@@ -50,7 +50,7 @@ body{
   padding: 10px;
 }
 .songList > li.active{
-  background: #d4d4d4;
+  background: #C8C8C8;
 }
 .uploadArea{}
 .draggable{
@@ -71,7 +71,7 @@ body{
 /* main */
 
 .page > main{
-  background: #d4d4d4;
+  background: #FAFAFA;
 }
 .form {
   font-size: 14px;
@@ -139,7 +139,7 @@ body{
   display: block;
   width: 100px;
   height: 100px;
-  background: green;
+  background: #C20C0C;
   position: absolute;
   top: 50%;
   left: 50%;
