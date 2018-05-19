@@ -11,10 +11,10 @@
       let {songs,selectedSongId} = data
 
       let liList = songs.map((song)=>{
+        // 在 li 元素上 ，把song.id，写在 data-song-id；示例：<li data-song-id = 'song.id'> </li>
         let $li = $('<li></li>').text(song.name).attr('data-song-id',song.id)
-        if(song.id === selectedSongId){
-          $li.addClass('active')
-        }
+        // 被选中的节点不在domLi上，而是在 model 上
+        if(song.id === selectedSongId){$li.addClass('active')}
         return $li
       })
 
@@ -33,6 +33,7 @@
       songs: [ ],
       selectSongId: undefined,
     },
+    // 在 controller 里面会调用一下
     find(){
       var query = new AV.Query('Song');
       return query.find().then((songs)=>{
@@ -56,8 +57,10 @@
       this.getAllSongs()
     },
 
+
     bindEvents(){
       $(this.view.el).on('click', 'li', (e)=>{
+        //操作 view.render里面取到的 song.id 值
         let songId = e.currentTarget.getAttribute('data-song-id')
 
         this.model.data.selectedSongId = songId
@@ -71,11 +74,15 @@
             break
           }
         }
+        // 把取到的 data 深拷贝后放到 event-Hub.js 上，别的模块可以去取了
         window.eventHub.emit('select', JSON.parse(JSON.stringify(data)))
-        // JSON.parse turns a string of JSON text into a Javascript object.
-        //JSON.stringify turns a Javascript object into JSON text and stores that JSON text in a string.
+        // 此时song-form.js / controller / window.eventHub.on('select', (data)=>{}) 就在eventHub 上取到了 data的值
+
+
+        // [JSON.parse] turns a string of JSON text into a Javascript object.
+        // [JSON.stringify] turns a Javascript object into JSON text and stores that JSON text in a string.
         // 也就是说 data 先变成 JSON,再变成 JS
-        // 为啥啊？？？
+        // 为啥啊？？？ ---> 为了深拷贝
 
       })
     },
@@ -101,6 +108,7 @@
       })
     },
 
+    // 调用 model 里面的 find()
     getAllSongs(){
       return this.model.find().then(()=>{
         this.view.render(this.model.data)

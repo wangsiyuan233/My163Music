@@ -20,8 +20,13 @@
       this.view.render(this.model.data)
 
       this.active()
+
+      // 把 激活状态的 data 发布到 event-hub.js
       window.eventHub.on('new', (data)=>{this.active()})
+
+      //监听 song-list.js 里面的 bindEvents() 取消【新建歌曲】的高亮
       window.eventHub.on('select', (data)=>{this.deactive()})
+
       $(this.view.el).on('click', ()=>{window.eventHub.emit('new')})
     },
 

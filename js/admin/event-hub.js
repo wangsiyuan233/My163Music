@@ -1,18 +1,20 @@
 window.eventHub = {
   events: {}, // hash
-  
-  emit(eventName, data){ //发布data
+
+  //发布：函数里的每个 data 都 call一遍
+  emit(eventName, data){
+    // for (var i = 0; i < array.length; i++) 遍历字符串
+    // for(let key in this.events) 遍历数组
     for(let key in this.events){
       if(key === eventName){
         let fnList = this.events[key]
-        fnList.map((fn)=>{
-          fn.call(undefined, data)
-        })
+        fnList.map((fn)=>{fn.call(undefined, data)})
       }
     }
   },
 
-  on(eventName, fn){ //订阅fn
+   //订阅fn
+  on(eventName, fn){
     if(this.events[eventName] === undefined){
       this.events[eventName] = []
     }
