@@ -54,7 +54,7 @@
 `song-form.js` 去 `even-hub.js` 上 取到 `data`，对 `data` 进行渲染， 输入框了就能出现歌曲详情了！
 同时需要更改： `song-form.js` / `view` / `render()` / 把【新建歌曲】改成【编辑歌曲】
 
-- 第十步： 【增】
+- 第十步： 【增】<br>
 -->做判断前：上传歌曲成功，点击【保存】按钮之前；点击了【新建歌曲】按钮，表单就会清空
 需要在 `song-form.js` / `controller` / `window.eventHub.on('new', (data)=>{}`) 做判断
 如果 新上传的 `id` 在数据库里，说明是重复歌曲，可以清空表单
