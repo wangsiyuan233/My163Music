@@ -31,7 +31,7 @@
 
 ### 六、知识点梳理
 
-#### 1.admin页面
+#### 【【1、admin页面】】
 
 【平均用时 5.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/admin)
@@ -97,7 +97,7 @@
 
 - 第十二步： 【权限管理】
 
-#### 2.index页面
+#### 【【2、index页面】】
 
 【平均用时 2.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/index)
@@ -118,7 +118,7 @@
 
 - 第五步： 在 `page-1.js` / `controller` 里面 引用两个小的模块，其实就是在 `body` 里面 添加了两个小模块 `script` 标签
 
-#### 3.song页面
+#### 【【3、song页面】】
 
 【平均用时 3.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/song)
