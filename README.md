@@ -12,14 +12,14 @@
 1. 网页云的页面简单，逻辑清晰，容易上手
 2. 可以参考的代码很多，新手友好型嘻嘻。
 
-### 技术栈
+### 三、技术栈
 
 MVC + Jquery + leancloud + qiniu
 
-### 开发环境
+### 四、开发环境
 > Win10
 
-# 目标功能
+### 五、目标功能
 
 - [√] 拖拽上传功能
 - [√] 【新建歌曲】 和 【编辑歌曲】切换
@@ -30,7 +30,8 @@ MVC + Jquery + leancloud + qiniu
 - [√] 实现胶片转动
 
 ## 知识点梳理
-## 一、admin页面
+
+### 1.admin页面
 
 【平均用时 5.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/admin)
@@ -96,7 +97,7 @@ MVC + Jquery + leancloud + qiniu
 
 - 第十二步： 【权限管理】
 
-## 二、index页面
+### 2.index页面
 
 【平均用时 2.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/index)
@@ -117,7 +118,7 @@ MVC + Jquery + leancloud + qiniu
 
 - 第五步： 在 `page-1.js` / `controller` 里面 引用两个小的模块，其实就是在 `body` 里面 添加了两个小模块 `script` 标签
 
-## 三、song页面
+### 3.song页面
 
 【平均用时 3.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/song)
