@@ -5,7 +5,6 @@
       this.$el = $(this.el)
     },
     show(){
-      console.log('here')
       this.$el.addClass('active')
     },
     hide(){
@@ -22,8 +21,6 @@
     },
     bindEventHub(){
       window.eventHub.on('selectTab', (tabName)=>{
-        console.log('1')
-        console.log(tabName)
         if(tabName === 'page-2'){
           this.view.show()
         }else{

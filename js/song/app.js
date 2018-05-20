@@ -40,6 +40,7 @@
       })
 
     },
+
     showLyric(time){
       let allP = this.$el.find('.lyric>.lines>p')
       let p
@@ -64,13 +65,17 @@
       })
       $(p).addClass('active').siblings('.active').removeClass('active')
     },
+
     play(){
       this.$el.find('audio')[0].play()
     },
+
     pause(){
       this.$el.find('audio')[0].pause()
     }
   }
+
+
   let model = {
     data:{
       song: {
@@ -82,24 +87,30 @@
       status: 'paused'
     },
     get(id){
+      // 下面两行是由 leancloud 提供的
       var query = new AV.Query('Song')
       return query.get(id).then((song)=>{
+        // 我还需要除了 data 以外的数据
         Object.assign(this.data.song, {id: song.id, ...song.attributes})
         return song
       })
     }
   }
+
+
   let controller = {
     init(view, model){
       this.view = view
       this.view.init()
       this.model = model
       let id = this.getSongId()
+      // model.get(id)
       this.model.get(id).then(()=>{
         this.view.render(this.model.data)
       })
       this.bindEvents()
     },
+
     bindEvents(){
       $(this.view.el).on('click', '.icon-play', ()=> {
         this.model.data.status = 'playing'
@@ -116,29 +127,33 @@
         this.view.render(this.model.data)
       })
     },
+
+    // 从查询字符串里找到 需要的 key对应的value
     getSongId(){
 
+      // 获取查询参数
       let search = window.location.search
+      // 如果问号在第一个，就把问好删除
       if(search.indexOf('?') === 0){
         search = search.substring(1)
       }
 
+      // (v=>v) 如果 v 是真值就要 是假值就不要 可以过滤掉5个假值
       let array = search.split('&').filter((v=>v))
       let id = ''
 
       for(let i = 0 ;i<array.length; i++){
+        // 左边是 id 右边是值
         let kv = array[i].split('=')
         let key = kv[0]
         let value = kv[1]
-        if(key ==='id'){
-          id = value
-          break
-        }
+        if(key ==='id'){id = value break}
       }
 
       return id
     }
   }
+
 
   controller.init(view, model)
 }

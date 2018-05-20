@@ -121,6 +121,7 @@ body{
   }
 }
 .site-loading{
+  /* 刚开始加载页面的时候是隐藏的 */
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -129,6 +130,7 @@ body{
   height: 100%;
   z-index: 1;
   background: rgba(0,0,0,0.2);
+  /* 用户可以穿透 div */
   pointer-events: none;
 }
 .site-loading.active{

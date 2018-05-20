@@ -2,8 +2,6 @@
 
 ## 一、admin页面
 
-### 
-
 【平均用时 5.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/admin)
 [【效果预览】](#)<br>
@@ -70,4 +68,27 @@
 
 ## 二、index页面
 
-###
+【平均用时 2.2 天】
+[【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/index)
+[【效果预览】](#)<br>
+
+- 第一步： 需要用到 `event-hub.js`
+
+- 第二步： 根据页面我们可以分析得到三个 `tabs` 【`page-1` 推荐音乐】 【`page-2` 热歌榜】 【`page-3` 搜索】
+不同的 `page` 可以通过 `tab.js` 来切换，绑定 `bindEvents()` 事件
+
+- 第三步： 此时可以把 `page-1` 分成两个 MVC； `page-1-1.js` 和 `page-1-2.js`
+定位两个小 `page` 的 `view.el`(在 `HTML` 中的位置）
+
+- 第四步： 获取我们在 `admin` 页面做的 `song-list`，首先我们需要一个 `template` 把 `li` 元素的行式确定下来；
+接着把 li 里面的 `song.id` & `song.name` & `song.singer` 替换成我们自己的数据
+怎么样才是替换成自己的 `songs` 呢？ 在`model/find()`里可以实现哦； 在 `controller` 里面 `then()` 渲染一下；
+原来就是不断的获取数据的过程啊
+
+- 第五步： 在 `page-1.js` / `controller` 里面 引用两个小的模块，其实就是在 `body` 里面 添加了两个小模块 `script` 标签
+
+## 三、song页面
+
+【平均用时 3.2 天】
+[【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/song)
+[【效果预览】](#)<br>
