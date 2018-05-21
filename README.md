@@ -59,7 +59,7 @@
 `new-song.js` 的 `controller` 中添加 `this.active()`
 
 - 第六步：点击【保存】 操作数据库，真正的保存起来
-在 `av.js`里面初始化AV对象 （使用qiniu提供的API）
+在 `av.js`里面初始化AV对象 （使用leancloud提供的API）
 `song-form.js` 的 `controller` 中添加 `bindEvents()` 监听 `submit` 事件；
 `song-form.js` 的 `controller` 中添加 `create()` 方法，遍历 `needs` 里面特定的字符串
 `song-form.js` 的 `model` 中添加 `create()` 方法 ， 抄文档

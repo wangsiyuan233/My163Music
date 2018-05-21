@@ -23,7 +23,7 @@
 .disc-container .ring{width: 72vw; }
 .disc-container .light{width: 72vw; position: absolute; }
 .disc-container .cover{width: 44.5vw; position: absolute; border-radius: 50%;
-  animation: circle 20s infinite linear;
+  animation: circle 30s infinite linear;
   animation-play-state: paused;
 }
 .disc-container.playing .light,
