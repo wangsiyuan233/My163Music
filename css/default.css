@@ -15,8 +15,11 @@ body{
 /* layout */
 
 .page{
+  border: 1px solid red;
+  width: 1000px;
+  height: 600px;
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
 }
 .page > aside{
   width: 200px;
@@ -110,6 +113,7 @@ body{
 .page > main > .form{
 
 }
+
 /* loading */
 
 @keyframes loading{
