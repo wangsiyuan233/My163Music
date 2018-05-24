@@ -4,7 +4,7 @@
 // 触发 update 事件，异步更新
 {
   let view = {
-    el: '.page > main',
+    el: '.page > section> main',
     init(){this.$el = $(this.el)},
 
     template: `
@@ -37,10 +37,10 @@
           <label>
           歌词
           </label>
-          <textarea cols=100 rows=10 name="lyrics">__lyrics__</textarea>
+          <textarea cols=50 rows=5 name="lyrics">__lyrics__</textarea>
         </div>
         <div class="row actions">
-          <button type="submit">保存</button>
+          <button type="submit">确定</button>
         </div>
       </form>
       `,

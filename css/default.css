@@ -10,23 +10,73 @@ body{
   font-size: 12px;
   line-height: 1.5;
 }
+/* topbar */
+section.topbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #D43C33;
+  padding: 17px 10px;
+}
+section.topbar .logo>svg{
+  width: 142px;
+  height: 25px;
+  vertical-align: top;
+
+}
+section.topbar > a{
+  color: white;
+  display: inline-block;
+  padding: 5px 11px;
+  line-height: 20px;
+  position: relative;
+}
+section.topbar > a::after{
+  content:'';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid white;
+  border-radius: 50px;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
 
 
 /* layout */
-
-.page{
-  border: 1px solid red;
-  width: 1000px;
-  height: 600px;
+.wrap{
   display: flex;
-  /* height: 100vh; */
+  justify-content: center;
+  align-items: center;
+  height: 99vh;
+
 }
+.page{
+  width: 700px;
+  display: inline-block;
+  flex-direction: column;
+  display: flex;
+  height: 75vh;
+  box-shadow: 4px 4px 7px 0px rgba(50, 50, 50, 0.86);
+  border-radius: 10px;
+
+}
+
+.second{
+  display: flex;
+  flex-direction: row;
+}
+
 .page > aside{
   width: 200px;
 }
 .page > main{
+  border: 1px solid green;
   flex-grow: 1;
   padding-left: 20px;
+  height: 100px;
 }
 
 /* aside */
@@ -37,6 +87,7 @@ body{
 .newSong{
   text-align: center;
   padding: 10px;
+  cursor: pointer;
 }
 .newSong.active{
   background: #fafafa;
@@ -49,13 +100,30 @@ body{
   border-top: 1px solid #999;
 }
 .songList > li{
+  cursor: pointer;
   border-bottom: 1px solid #ddd;
   padding: 10px;
 }
+.songList > li:nth-child(2n){
+  background-color: #EFEFEF;
+}
+
+.songList > li:nth-child(2n+1){
+  background-color: #F7F7F7;
+}
+
 .songList > li.active{
   background: #C8C8C8;
 }
-.uploadArea{}
+
+.songList > li.active::after{
+  background: #C8C8C8;
+}
+
+.uploadArea{
+  margin-top: 126px;
+}
+
 .draggable{
   text-align: center;
   padding: 20px;
@@ -65,20 +133,29 @@ body{
   align-items: center;
   justify-content: center;
   width: 200px;
-  flex-direction: column;
-}
-.clickable{
   cursor: pointer;
+
 }
+
 
 /* main */
 
 .page > main{
   background: #FAFAFA;
 }
-.form {
-  font-size: 14px;
+
+main > h1{
+  color: #D43C33;
+  margin-left: 5em;
 }
+
+
+.form {
+  font-size: 12px;
+  margin-left: 35px;
+}
+
+
 .form > .row{
   margin: 20px 0;
   display: flex;
@@ -93,6 +170,12 @@ body{
 .form > .row.actions{
   margin-left: calc(4em + 5px);
 }
+.form > .actions > button{
+  border: 0;
+  background-color: #D43C33;
+  width: 150px;
+}
+
 .form input[type=text]{
   padding: 3px 8px;
   border-radius: 5px;
