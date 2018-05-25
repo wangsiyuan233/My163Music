@@ -1,5 +1,9 @@
 # 网页云音乐
 
+[【后台页面】](http://wangsiyuan233.cn/My163Music/src/admin.html)
+[【手机首页】](http://wangsiyuan233.cn/My163Music/src/index.html)
+[【单曲页面】](http://wangsiyuan233.cn/My163Music/src/song.html)
+
 ### 预览
 > **1、点击添加歌曲**<br>
 
@@ -52,7 +56,7 @@
 
 【平均用时 5.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/admin)
-[【效果预览】](#)<br>
+[【效果预览】](http://wangsiyuan233.cn/My163Music/src/admin.html)<br>
 
 - 第一步：在 `upload-song.js` 中 用文档 取到歌曲的 `url` 和 `name`;
 
@@ -118,7 +122,7 @@
 
 【平均用时 2.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/index)
-[【效果预览】](#)<br>
+[【效果预览】](http://wangsiyuan233.cn/My163Music/src/index.html)<br>
 
 - 第一步： 需要用到 `event-hub.js`
 
@@ -139,4 +143,4 @@
 
 【平均用时 3.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/song)
-[【效果预览】](#)<br>
+[【效果预览】](http://wangsiyuan233.cn/My163Music/src/song.html)<br>
