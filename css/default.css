@@ -50,15 +50,16 @@ section.topbar > a::after{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 99vh;
+  height: 100vh;
 
 }
 .page{
+  position: relative;
   width: 700px;
   display: inline-block;
   flex-direction: column;
   display: flex;
-  height: 75vh;
+  height: 440px;
   box-shadow: 4px 4px 7px 0px rgba(50, 50, 50, 0.86);
   border-radius: 10px;
 
@@ -69,9 +70,6 @@ section.topbar > a::after{
   flex-direction: row;
 }
 
-.page > aside{
-  width: 200px;
-}
 .page > main{
   border: 1px solid green;
   flex-grow: 1;
@@ -82,6 +80,7 @@ section.topbar > a::after{
 /* aside */
 .page > aside{
   display: flex;
+  /* width: 200px; */
   flex-direction: column;
 }
 .newSong{
@@ -121,7 +120,8 @@ section.topbar > a::after{
 }
 
 .uploadArea{
-  margin-top: 126px;
+  position: absolute;
+  bottom: 0;
 }
 
 .draggable{
@@ -132,7 +132,7 @@ section.topbar > a::after{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 150px;
   cursor: pointer;
 
 }

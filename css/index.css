@@ -202,3 +202,11 @@ section.art .copyright{
   color: #888;
   transform: scale(.75);
 }
+
+.page-2 > p,
+.page-3 > p {
+  font-size: 30px;
+  color:#D43C33;
+  margin-top: 100px;
+  margin-left: 62px;
+}
