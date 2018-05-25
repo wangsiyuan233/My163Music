@@ -1,6 +1,6 @@
 {
   let view = {
-    el: 'section.songs',
+    el: 'section > .songs',
     init(){this.$el = $(this.el)},
 
     // temmplate 是从 源码上拷贝来的； template 是 li 的模板
