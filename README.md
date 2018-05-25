@@ -1,5 +1,7 @@
 # 网页云音乐
 
+----------
+
 ### 预览
 **1、点击添加歌曲**<br>
 ![](https://i.imgur.com/qvB8ua7.gif)<br>
@@ -9,6 +11,8 @@
 ![](https://i.imgur.com/U0KsA4h.gif)<br>
 **4、播放/暂停歌曲**<br>
 ![](https://i.imgur.com/PzqXFGp.gif)<br>
+
+----------
 
 ### 一、为什么做这个项目？
 
