@@ -145,3 +145,15 @@
 【平均用时 3.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/My163Music/tree/master/js/song)
 [【效果预览】](http://wangsiyuan233.cn/My163Music/src/song.html)<br>
+
+- 第一步： 背景图片和 圆圈图片是同一个路径
+- 
+- 第二步： `audio` 自带的 `end` 事件不能冒泡， 无法通知页面歌曲已经播完，所以需要通知中枢[我已经结束了~]
+- 
+- 第三步： `css` 里面 `.playing` :  `animation-play-state: running; `动画运行
+- 
+- 第四步： 替换歌曲的名字
+- 
+- 第五步： 利用正则定位歌词
+- 
+- 第六步： 【暂停/恢复】局部更新，暂停恢复以后，连续播放
