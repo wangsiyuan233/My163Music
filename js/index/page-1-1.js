@@ -1,6 +1,6 @@
 {
   let view = {
-    el: 'section > .playlists'
+    el: 'section.playlists'
   }
   let model = {}
   let controller = {}
